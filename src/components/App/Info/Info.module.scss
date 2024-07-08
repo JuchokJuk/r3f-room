@@ -1,0 +1,27 @@
+.info {
+    background: white;
+    border-radius: 8px;
+    padding: 8px 12px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+
+    button {
+        border: none;
+        background: lightgray;
+        width: 16px;
+        height: 16px;
+        border-radius: 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition:
+            background-color 0.4s,
+            color 0.4s;
+
+        @include hover {
+            background: black;
+            color: white;
+        }
+    }
+}
