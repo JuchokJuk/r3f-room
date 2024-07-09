@@ -3,6 +3,7 @@ import { ReactNode, useState } from 'react';
 import { Html } from '@react-three/drei';
 import styles from './Info.module.scss';
 import Cross from '../../../assets/cross.svg?react';
+import { ThreeEvent } from '@react-three/fiber';
 
 interface InfoProps {
   content: string;
@@ -12,8 +13,9 @@ interface InfoProps {
 export function Info({ content, children }: InfoProps) {
   const [visible, setVisible] = useState(false);
 
-  function open() {
+  function open(event: ThreeEvent<MouseEvent>) {
     setVisible(true);
+    event.stopPropagation();
   }
 
   function close() {
