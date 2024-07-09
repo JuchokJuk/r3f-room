@@ -11,7 +11,7 @@ import { useState } from 'react';
 
 type Furniture = {
   id: number;
-  component: any;
+  component: typeof Bed | typeof Chair | typeof Lamp;
   position: [number, number, number];
   rotation: number;
   color: string;
@@ -82,7 +82,7 @@ export function Scene() {
             setDragging={setDragging}
           >
             <Info content={item.name}>
-              <item.component this={item.component} color={item.color} />
+              <item.component color={item.color} />
             </Info>
           </Draggable>
         ))}
