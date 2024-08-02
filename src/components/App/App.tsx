@@ -1,6 +1,7 @@
 import styles from './App.module.scss';
 import { Canvas } from '@react-three/fiber';
 import { Scene } from './Scene';
+import { NoToneMapping } from 'three';
 
 export function App() {
   return (

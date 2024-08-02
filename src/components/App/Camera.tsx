@@ -1,12 +1,13 @@
 import { OrbitControls } from '@react-three/drei';
 
-export function Camera() {
+export function Camera({ enabled }: { enabled: boolean }) {
   return (
-      <OrbitControls
-        enableDamping
-        zoomToCursor
-        minPolarAngle={0}
-        maxPolarAngle={(Math.PI * 7) / 16}
-      />
+    <OrbitControls
+      enabled={enabled}
+      enableDamping
+      zoomToCursor
+      minPolarAngle={0}
+      maxPolarAngle={(Math.PI * 7) / 16}
+    />
   );
 }
