@@ -3,18 +3,18 @@ import { Camera } from './Camera';
 import { Environment } from '@react-three/drei';
 import { Room } from './Room/Room';
 import { useState } from 'react';
-import { Color, Plane, Vector3 } from 'three';
+import { Plane, Vector3 } from 'three';
 import { Draggable } from './Draggable';
 import { Info } from './Info/Info';
 import { Carpet } from './furniture/Carpet';
 import { Lamp } from './furniture/Lamp';
+import environment from '../../assets/the_sky_is_on_fire_1k.hdr?url';
 
 import {
   EffectComposer,
   Bloom,
   Noise,
   Vignette,
-  LensFlare,
   ToneMapping,
 } from '@react-three/postprocessing';
 import { KernelSize, Resolution, BlendFunction } from 'postprocessing';
@@ -83,7 +83,7 @@ export function Scene() {
         />
       </EffectComposer>
       <Camera enabled={!dragging} />
-      <Environment files="the_sky_is_on_fire_1k.hdr" environmentIntensity={0.25} />
+      <Environment files={environment} environmentIntensity={0.25} />
       <directionalLight
         intensity={4.8}
         position-x={-0.575312}

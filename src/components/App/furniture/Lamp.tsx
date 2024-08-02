@@ -1,8 +1,8 @@
 import { useGLTF } from '@react-three/drei';
-import { PointLight } from 'three';
+import lamp from '../../../assets/lamp.glb?url';
 
 export function Lamp() {
-  const model = useGLTF('lamp.glb');
+  const model = useGLTF(lamp);
 
   return (
     <>

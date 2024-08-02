@@ -1,15 +1,18 @@
 import { MeshProps, useLoader } from '@react-three/fiber';
 import { MeshReflectorMaterial } from '@react-three/drei';
 import { RepeatWrapping, TextureLoader } from 'three';
+import basecolorURL from '../../../assets/textures/wall/basecolor.jpg?url';
+import normalURL from '../../../assets/textures/wall/normal.jpg?url';
+import roughnessURL from '../../../assets/textures/wall/roughness.jpg?url';
 
 export function Wall({
   width,
   height,
   ...meshProps
 }: { width: number; height: number } & MeshProps) {
-  const basecolor = useLoader(TextureLoader, 'textures/wall/basecolor.jpg');
-  const normal = useLoader(TextureLoader, 'textures/wall/normal.jpg');
-  const roughness = useLoader(TextureLoader, 'textures/wall/roughness.jpg');
+  const basecolor = useLoader(TextureLoader, basecolorURL);
+  const normal = useLoader(TextureLoader, normalURL);
+  const roughness = useLoader(TextureLoader, roughnessURL);
 
   basecolor.repeat.set(width, height);
   normal.repeat.set(width, height);

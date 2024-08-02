@@ -1,7 +1,8 @@
 import { useGLTF } from '@react-three/drei';
+import carpet from '../../../assets/carpet.glb?url';
 
 export function Carpet() {
-  const model = useGLTF('carpet.glb');
+  const model = useGLTF(carpet);
 
   return (
     <mesh
