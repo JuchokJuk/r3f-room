@@ -83,7 +83,7 @@ export function Scene() {
         />
       </EffectComposer>
       <Camera enabled={!dragging} />
-      <Environment files="static/the_sky_is_on_fire_1k.hdr" environmentIntensity={0.25} />
+      <Environment files="the_sky_is_on_fire_1k.hdr" environmentIntensity={0.25} />
       <directionalLight
         intensity={4.8}
         position-x={-0.575312}

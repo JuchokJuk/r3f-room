@@ -7,9 +7,9 @@ export function Floor({
   height,
   ...meshProps
 }: { width: number; height: number } & MeshProps) {
-  const basecolor = useLoader(TextureLoader, 'static/textures/floor/basecolor.jpg');
-  const normal = useLoader(TextureLoader, 'static/textures/floor/normal.jpg');
-  const roughness = useLoader(TextureLoader, 'static/textures/floor/roughness.jpg');
+  const basecolor = useLoader(TextureLoader, 'textures/floor/basecolor.jpg');
+  const normal = useLoader(TextureLoader, 'textures/floor/normal.jpg');
+  const roughness = useLoader(TextureLoader, 'textures/floor/roughness.jpg');
 
   basecolor.repeat.set(width, height);
   normal.repeat.set(width, height);
