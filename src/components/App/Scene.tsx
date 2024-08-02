@@ -1,6 +1,6 @@
 import { Camera } from './Camera';
 
-import { Environment } from '@react-three/drei';
+import { ContactShadows, Environment } from '@react-three/drei';
 import { Room } from './Room/Room';
 import { useState } from 'react';
 import { Plane, Vector3 } from 'three';
@@ -16,6 +16,7 @@ import {
   Noise,
   Vignette,
   ToneMapping,
+  SSAO,
 } from '@react-three/postprocessing';
 import { KernelSize, Resolution, BlendFunction } from 'postprocessing';
 
@@ -60,7 +61,7 @@ export function Scene() {
   const [dragging, setDragging] = useState(false);
   return (
     <>
-      <EffectComposer>
+      <EffectComposer enableNormalPass>
         <Bloom
           intensity={0.5} // The bloom intensity.
           kernelSize={KernelSize.VERY_LARGE} // blur kernel size
@@ -72,14 +73,19 @@ export function Scene() {
         />
         <Noise opacity={0.02} />
         <Vignette eskil={false} offset={0.1} darkness={1.1} />
-        <ToneMapping
-          blendFunction={BlendFunction.NORMAL} // blend mode
-          adaptive={true} // toggle adaptive luminance map usage
-          resolution={256} // texture resolution of the luminance map
-          middleGrey={0.6} // middle grey factor
-          maxLuminance={16.0} // maximum luminance
-          averageLuminance={1.0} // average luminance
-          adaptationRate={1.0} // luminance adaptation rate
+        {/* @ts-ignore */}
+        <SSAO
+          blendFunction={BlendFunction.MULTIPLY}
+          samples={10}
+          radius={5}
+          intensity={30}
+        />
+        {/* @ts-ignore */}
+        <SSAO
+          blendFunction={BlendFunction.MULTIPLY}
+          samples={10}
+          radius={0.1}
+          intensity={50}
         />
       </EffectComposer>
       <Camera enabled={!dragging} />
