@@ -1,9 +1,9 @@
 import { MeshProps, useLoader } from '@react-three/fiber';
 import { MeshReflectorMaterial } from '@react-three/drei';
 import { RepeatWrapping, TextureLoader } from 'three';
-import basecolorURL from '../../../assets/textures/wall/basecolor.jpg?url';
-import normalURL from '../../../assets/textures/wall/normal.jpg?url';
-import roughnessURL from '../../../assets/textures/wall/roughness.jpg?url';
+import basecolorURL from '@assets/textures/wall/basecolor.jpg?url';
+import normalURL from '@assets/textures/wall/normal.jpg?url';
+import roughnessURL from '@assets/textures/wall/roughness.jpg?url';
 
 export function Wall({
   width,
@@ -48,6 +48,14 @@ export function Wall({
         normalMap={normal}
         roughnessMap={roughness}
       />
+      {/* <meshPhysicalMaterial
+        envMapIntensity={1}
+        dithering={false}
+        metalness={0}
+        map={basecolor}
+        normalMap={normal}
+        roughnessMap={roughness}
+      /> */}
     </mesh>
   );
 }

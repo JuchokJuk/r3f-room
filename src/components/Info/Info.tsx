@@ -2,7 +2,7 @@ import { ReactNode, useState } from 'react';
 
 import { Html } from '@react-three/drei';
 import styles from './Info.module.scss';
-import Cross from '../../../assets/cross.svg?react';
+import Cross from '@assets/cross.svg?react';
 import { ThreeEvent } from '@react-three/fiber';
 
 interface InfoProps {

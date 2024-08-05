@@ -1,5 +1,5 @@
 import { useGLTF } from '@react-three/drei';
-import lamp from '../../../assets/lamp.glb?url';
+import lamp from '@assets/lamp.glb?url';
 
 export function Lamp() {
   const model = useGLTF(lamp);
