@@ -37,7 +37,7 @@ export function Floor({
         mixStrength={20}
         mixContrast={1}
         resolution={512}
-        mirror={0}
+        mirror={0.5}
         depthScale={0.01}
         minDepthThreshold={0.9}
         maxDepthThreshold={1}

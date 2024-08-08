@@ -10,6 +10,7 @@ import { Lamp } from './furniture/Lamp';
 
 import { Effects } from './Effects';
 import { Light } from './Light';
+import { Stool } from './furniture/Stool';
 
 type Furniture = {
   id: number;
@@ -33,6 +34,13 @@ const furniture: Furniture[] = [
     position: [0, 0, 0],
     rotation: 0,
     name: 'Ковёр',
+  },
+  {
+    id: 1,
+    component: Stool,
+    position: [0, 0, 0],
+    rotation: 0,
+    name: 'Ступ',
   },
 ];
 

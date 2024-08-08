@@ -29,7 +29,7 @@ export function Wall({
   return (
     <mesh {...meshProps}>
       <planeGeometry args={[width, height]} />
-      <MeshReflectorMaterial
+      {/* <MeshReflectorMaterial
         envMapIntensity={1}
         dithering={false}
         blur={[1000, 400]}
@@ -47,15 +47,15 @@ export function Wall({
         map={basecolor}
         normalMap={normal}
         roughnessMap={roughness}
-      />
-      {/* <meshPhysicalMaterial
+      /> */}
+      <meshPhysicalMaterial
         envMapIntensity={1}
         dithering={false}
         metalness={0}
         map={basecolor}
         normalMap={normal}
         roughnessMap={roughness}
-      /> */}
+      />
     </mesh>
   );
 }
